@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "system_url": {
+      "type": "string",
+      "title": "System URL",
+      "description": "The base URL of the External System API. For example, https://api.github.com"
+    },
+    "auth_header_name": {
+      "type": "string",
+      "title": "Authorization Header Name",
+      "description": "Name of the Authorization Header for API calls",
+      "format": "password"
+    },
+    "auth_header_value": {
+      "type": "string",
+      "title": "Authorization Header Value",
+      "description": "Value of the Authorization Header for API calls",
+      "format": "password"
+    },
+    "application_name": {
+      "type": "string",
+      "title": "Application Name",
+      "description": "The name of the Application CR where the REST APIS should be registered for consumption"
+    },
+    "spec_url": {
+      "type": "string",
+      "title": "API Specification URL",
+      "description": "API Specification URL"
+    },
+    "provider_name": {
+      "type": "string",
+      "title": "Provider Name",
+      "description": "Provider Name"
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Product Name",
+      "description": "Product Name"
+    }
+  },
+  "required": [
+    "system_url",
+    "auth_header_value",
+    "auth_header_name",
+    "application_name",
+    "provider_name",
+    "product_name"
+  ]
+}
