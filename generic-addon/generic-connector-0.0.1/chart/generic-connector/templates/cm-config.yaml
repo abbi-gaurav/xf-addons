@@ -11,7 +11,7 @@ data:
   PROVIDER_NAME: {{ .Values.provider_name | quote }}
   PRODUCT_NAME: {{ .Values.product_name | quote }}
   APP_KIND: rest-with-apikey
-  API_DESCRIPTION: {{- printf "%s %s" .Values.product_name "API"  -}}
+  API_DESCRIPTION: {{ printf "%s %s" .Values.product_name "API"  }}
   API_SPECIFICATION_URL: {{ .Values.spec_url | default "" | quote  }}
 ---
 apiVersion: v1
