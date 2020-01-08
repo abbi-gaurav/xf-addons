@@ -7,16 +7,16 @@
       "title": "System URL",
       "description": "The base URL of the External System API. For example, https://api.github.com"
     },
-    "auth_header_name": {
+    "api_call_headers": {
       "type": "string",
-      "title": "Authorization Header Name",
-      "description": "Name of the Authorization Header for API calls",
+      "title": "API Call Headers",
+      "description": "Pass all the headers required to make API calls as a JSON object. e.g. {\"Authorization\" : \"Bearer <Token>\"}",
       "format": "password"
     },
-    "auth_header_value": {
+    "api_call_params": {
       "type": "string",
-      "title": "Authorization Header Value",
-      "description": "Value of the Authorization Header for API calls",
+      "title": "API Call Params",
+      "description": "Pass all the headers required to make API calls as a JSON object. e.g. {\"format\" : \"client_credentials\"}",
       "format": "password"
     },
     "application_name": {
@@ -42,8 +42,8 @@
   },
   "required": [
     "system_url",
-    "auth_header_value",
-    "auth_header_name",
+    "api_call_headers",
+    "api_call_params",
     "application_name",
     "provider_name",
     "product_name"

@@ -22,7 +22,5 @@ metadata:
     app: {{ template "bundle.fullname" . }}
     component: {{ template "bundle.fullname" . }}-{{ .Values.apiRegistrationJobName }}
 data:
-  headers.json: |-
-    {
-      {{ .Values.auth_header_name | quote }} : {{ .Values.auth_header_value | quote }}
-    }
+  headers.json: {{ .Values.api_call_headers }}
+  params.json: {{ .Values.api_call_params }}
