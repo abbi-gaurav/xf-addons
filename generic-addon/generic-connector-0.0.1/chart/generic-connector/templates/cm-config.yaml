@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ Release.Name }}-env
+  name: {{ .Release.Name }}-env
   labels:
-    app: {{ Release.Name }}
-    component: {{ Release.Name }}-{{ .Values.apiRegistrationJobName }}
+    app: {{ .Release.Name }}
+    component: {{ .Release.Name }}-{{ .Values.apiRegistrationJobName }}
 data:
   SYSTEM_URL	: {{ .Values.system_url | quote }}
   APPLICATION_NAME: {{ .Values.application_name | quote }}
@@ -17,10 +17,10 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ Release.Name }}-config
+  name: {{ .Release.Name }}-config
   labels:
-    app: {{ Release.Name }}
-    component: {{ Release.Name }}-{{ .Values.apiRegistrationJobName }}
+    app: {{ .Release.Name }}
+    component: {{ .Release.Name }}-{{ .Values.apiRegistrationJobName }}
 data:
   headers.json: {{ .Values.api_call_headers }}
   params.json: {{ .Values.api_call_params }}

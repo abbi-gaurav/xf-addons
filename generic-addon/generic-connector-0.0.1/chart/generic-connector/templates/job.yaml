@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ Release.Name }}-{{ .Values.apiRegistrationJobName }}
+  name: {{ .Release.Name }}-{{ .Values.apiRegistrationJobName }}
 labels:
-  app: {{ Release.Name }}
-  component: {{ Release.Name }}-{{ .Values.apiRegistrationJobName }}
+  app: {{ .Release.Name }}
+  component: {{ .Release.Name }}-{{ .Values.apiRegistrationJobName }}
 spec:
   template:
     metadata:
       labels:
-        app: {{ Release.Name }}
-        component: {{ Release.Name }}-{{ .Values.apiRegistrationJobName }}
+        app: {{ .Release.Name }}
+        component: {{ .Release.Name }}-{{ .Values.apiRegistrationJobName }}
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
@@ -20,13 +20,13 @@ spec:
         name: {{ .Values.apiRegistrationJobName }}
         envFrom:
         - configMapRef:
-            name: {{ Release.Name }}-env
+            name: {{ .Release.Name }}-env
         volumeMounts:
         - name: {{ template "bundle.fullname" . }}-volume
           mountPath: /app/files/
       volumes:
       - name: {{ template "bundle.fullname" . }}-volume
         configMap:
-          name: {{ Release.Name }}-config
+          name: {{ .Release.Name }}-config
       restartPolicy: Never
 status: {}
