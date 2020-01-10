@@ -10,7 +10,7 @@
     "api_call_headers": {
       "type": "string",
       "title": "API Call Headers",
-      "description": "Pass all the headers required to make API calls as a JSON object. e.g. {\"Authorization\" : \"Bearer <Token>\"}",
+      "description": "Pass all the headers required to make API calls as a JSON object. e.g. {\"api-key\" : \"<API Key value>\"}",
       "format": "password"
     },
     "api_call_params": {
