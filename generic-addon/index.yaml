@@ -1,6 +1,0 @@
-apiVersion: v1
-entries:
-  generic-connector:
-    - name: generic-connector
-      description: "generic connector"
-      version: 0.0.1

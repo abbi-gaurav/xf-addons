@@ -1,7 +1,7 @@
 docs:
   - template:
-      displayName: "generic-connector-0.0.1"
-      description: "Generic Connector documentation"
+      displayName: "generic-api-connector-0.0.1"
+      description: "Generic API Connector documentation"
       sources:
         - type: markdown
           name: docs

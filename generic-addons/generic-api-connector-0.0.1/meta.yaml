@@ -1,8 +1,8 @@
-name: generic-connector
+name: generic-api-connector
 version: 0.0.1
 description: "A generic connector to enable calling APIs to external systems."
 id: 15ad661a-6e44-4b15-ab78-33a811d06a8c
-displayName: "[Preview] Generic - Connector"
+displayName: "[Preview] Generic API Connector"
 tags: preview,generic,connector
 labels: 
   preview: "true"

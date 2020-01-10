@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ template "generic-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
+  name: {{ template "generic-api-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
 labels:
-  app: {{ template "generic-connector.fullname" . }}
-  component: {{ template "generic-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
+  app: {{ template "generic-api-connector.fullname" . }}
+  component: {{ template "generic-api-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
 spec:
   template:
     metadata:
       labels:
-        app: {{ template "generic-connector.fullname" . }}
-        component: {{ template "generic-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
+        app: {{ template "generic-api-connector.fullname" . }}
+        component: {{ template "generic-api-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
@@ -20,13 +20,13 @@ spec:
         name: {{ .Values.apiRegistrationJobName }}
         envFrom:
         - configMapRef:
-            name: {{ template "generic-connector.fullname" . }}-env
+            name: {{ template "generic-api-connector.fullname" . }}-env
         volumeMounts:
         - name: {{ template "bundle.fullname" . }}-volume
           mountPath: /app/files/
       volumes:
       - name: {{ template "bundle.fullname" . }}-volume
         configMap:
-          name: {{ template "generic-connector.fullname" . }}-config
+          name: {{ template "generic-api-connector.fullname" . }}-config
       restartPolicy: Never
 status: {}

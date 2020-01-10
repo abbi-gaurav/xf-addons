@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "generic-connector.fullname" . }}-env
+  name: {{ template "generic-api-connector.fullname" . }}-env
   labels:
-    app: {{ template "generic-connector.fullname" . }}
-    component: {{ template "generic-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
+    app: {{ template "generic-api-connector.fullname" . }}
+    component: {{ template "generic-api-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
 data:
   SYSTEM_URL	: {{ .Values.system_url | quote }}
   APPLICATION_NAME: {{ .Values.application_name | quote }}
@@ -17,10 +17,10 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "generic-connector.fullname" . }}-config
+  name: {{ template "generic-api-connector.fullname" . }}-config
   labels:
-    app: {{ template "generic-connector.fullname" . }}
-    component: {{ template "generic-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
+    app: {{ template "generic-api-connector.fullname" . }}
+    component: {{ template "generic-api-connector.fullname" . }}-{{ .Values.apiRegistrationJobName }}
 data:
   headers.json: |-
     {{ .Values.api_call_headers }}
